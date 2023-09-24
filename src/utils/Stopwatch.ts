@@ -1,4 +1,4 @@
-import { Beepsound } from './BeepSound';
+// import { Beepsound } from './BeepSound';
 
 export const Stopwatch = function (elem: any, options: any) {
   const times = [
