@@ -10,10 +10,6 @@ function App() {
   useEffect(() => {
     new (Stopwatch as any)(timer.current, {});
 
-    navigator.vibrate([
-      100, 30, 100, 30, 100, 30, 200, 30, 200, 30, 200, 30, 100, 30, 100, 30,
-      100,
-    ]);
   }, []);
 
   return (

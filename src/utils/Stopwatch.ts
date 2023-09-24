@@ -1,4 +1,29 @@
+import { Beepsound } from './BeepSound';
+
 export const Stopwatch = function (elem: any, options: any) {
+  const times = [
+    { h: 0, m: 0, s: 3 },
+    { h: 0, m: 3, s: 58 },
+    { h: 0, m: 16, s: 37 },
+    { h: 0, m: 17, s: 44 },
+    { h: 0, m: 19, s: 47 },
+    { h: 0, m: 23, s: 36 },
+    { h: 0, m: 24, s: 32 },
+    { h: 0, m: 26, s: 2 },
+    { h: 0, m: 26, s: 47 },
+    { h: 0, m: 27, s: 20 },
+    { h: 0, m: 29, s: 27 },
+    { h: 0, m: 29, s: 34 },
+    { h: 0, m: 30, s: 21 },
+    { h: 0, m: 31, s: 38 },
+    { h: 0, m: 37, s: 13 },
+    { h: 0, m: 46, s: 27 },
+    { h: 0, m: 54, s: 0 },
+    { h: 0, m: 54, s: 33 },
+    { h: 1, m: 5, s: 16 },
+  ];
+  let indexTimes = 0;
+
   let timer = createTimer(),
     startButton = createButton('start', start),
     stopButton = createButton('stop', stop),
@@ -88,6 +113,15 @@ export const Stopwatch = function (elem: any, options: any) {
         hrs++;
       }
     }
+
+    if (
+      hrs === times[indexTimes].h &&
+      min === times[indexTimes].m &&
+      Math.floor(clock / 1000) === times[indexTimes].s
+    ) {
+      Beepsound();
+    }
+
     timer.innerHTML =
       hrs +
       '<p>hrs</p>' +
