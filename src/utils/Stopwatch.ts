@@ -1,11 +1,8 @@
-// import { Beepsound } from './BeepSound';
+import { Beepsound } from './BeepSound';
 
 export const Stopwatch = function (elem: any, options: any) {
   const times = [
     { h: 0, m: 0, s: 3 },
-    { h: 0, m: 0, s: 10 },
-    { h: 0, m: 0, s: 30 },
-    { h: 0, m: 1, s: 0 },
     { h: 0, m: 3, s: 58 },
     { h: 0, m: 16, s: 37 },
     { h: 0, m: 17, s: 44 },
@@ -123,7 +120,7 @@ export const Stopwatch = function (elem: any, options: any) {
       Math.floor(clock / 1000) === times[indexTimes].s
     ) {
       indexTimes++;
-      console.log('hello');
+      Beepsound();
     }
 
     timer.innerHTML =
