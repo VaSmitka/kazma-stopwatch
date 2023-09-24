@@ -8,7 +8,7 @@ function App() {
   const timer = useRef(null);
 
   useEffect(() => {
-    new Stopwatch(timer.current);
+    let test1 = new (Stopwatch as any)(timer.current, 2);
 
     navigator.vibrate([
       100, 30, 100, 30, 100, 30, 200, 30, 200, 30, 200, 30, 100, 30, 100, 30,

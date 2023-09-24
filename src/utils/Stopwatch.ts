@@ -1,11 +1,11 @@
-export const Stopwatch = function (elem, options) {
+export const Stopwatch = function (elem: any, options: any) {
   let timer = createTimer(),
     startButton = createButton('start', start),
     stopButton = createButton('stop', stop),
     resetButton = createButton('reset', reset),
-    offset,
-    clock,
-    interval,
+    offset: any,
+    clock: any,
+    interval: any,
     hrs = 0,
     min = 0;
 
@@ -26,7 +26,7 @@ export const Stopwatch = function (elem, options) {
     return document.createElement('span');
   }
 
-  function createButton(action, handler) {
+  function createButton(action: any, handler: any) {
     if (action !== 'reset') {
       let a = document.createElement('a');
       a.href = '#' + action;
@@ -64,14 +64,14 @@ export const Stopwatch = function (elem, options) {
 
   function reset() {
     clock = 0;
-    render(0);
+    render();
   }
 
   function clean() {
     min = 0;
     hrs = 0;
     clock = 0;
-    render(0);
+    render();
   }
 
   function update() {
